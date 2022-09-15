@@ -5,33 +5,63 @@ public class Pont {
     private int y;
 
     public Pont() {
-        x = 0;
-        y = 0;
+        this.x = 0;
+        this.y = 0;
     }
 
     public Pont(int x, int y) {
-        x = this.x;
-        y = this.y;
+        this.x = x;
+        this.y = y;
     }
 
     public int getX() {
-        return x;
+        return this.x;
     }
 
     public int getY() {
-        return y;
+        return this.y;
     }
 
     public Pont(int n) {
         this.y = koordinataGeneralasa(n);
+        this.x = koordinataGeneralasa(n);
     }
 
-    private int koordinataGeneralasa(int n){
-       return (int) (Math.random() * ((2 * n) + 1 )) - n;
+    private int koordinataGeneralasa(int n) {
+        return (int) (Math.random() * ((2 * n) + 1)) - n;
     }
-    public double getOrigotolMertTavolsag(){
+
+    public double getOrigotolMertTavolsag() {
         //négyzetgyök SQuareRooT \\ hatványozás - POWer
-        return Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y,2));
+        return Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2));
+    }
+
+    public double ketPontTavolsaga(Pont p1, Pont p2) {
+        return p1.x * p2.x + p1.y * p2.y;
+    }
+
+    public int siknegyed(Pont p) {
+        return p.siknegyedBehatarolas(p);
+    }
+
+    private int siknegyedBehatarolas(Pont p) {
+        int balfelso = 1;
+        int balalso = 2;
+        int jobbalso = 3;
+        int jobbfelso = 4;
+        if (p.x > 0 && p.y > 0) {
+            return jobbfelso;
+        }
+        if (p.x > 0 && p.y < 0) {
+            return jobbalso;
+        }
+        if (p.x < 0 && p.y < 0) {
+            return balalso;
+        }
+        if (p.x < 0 && p.y > 0) {
+            return balfelso;
+        }
+        return 0;
     }
 
     @Override
