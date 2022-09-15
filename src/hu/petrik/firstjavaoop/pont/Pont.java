@@ -26,6 +26,10 @@ public class Pont {
         this.x = (int) (Math.random() * (2 * n) + 1 ) - n;
     }
 
+    private int koordinataGeneralasa(int n){
+       return this.x = (int) (Math.random() * (2 * n) + 1 ) - n;
+    }
+
     @Override
     public String toString() {
         // return "Pont{" + "x=" + x + ", y=" + y + '}';
