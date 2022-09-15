@@ -5,7 +5,7 @@ import hu.petrik.firstjavaoop.pont.Pont;
 public class Main {
     public static void main(String[] args) {
 
-        // Pont feladat kezdete:
+        // Pont feladat kezdete
 
         Pont p1 = new Pont();
         Pont p2 = new Pont(0, 2);
@@ -40,10 +40,16 @@ public class Main {
         Pont pont1 = new Pont(2, 5);
         Pont pont2 = new Pont(7, 10);
         Pont p0 = new Pont();
-        System.out.printf("A %s pont és a %s pont távolsága: %.3f\n", pont1, pont2, p0.ketPontTavolsaga(pont1, pont2));
+        System.out.printf("A %s pont és a %s pont távolsága: %.3f\n", pont1, pont2, pont1.ketPontTavolsaga(pont2));
         System.out.printf("A %s pont a következő síknegyedben helyezkedik el: %s.\n", pont1, p0.siknegyed(pont1));
 
 
-        // Pont feladat vége:
+        // Pont feladat vége
+
+        // Kör feladat kezdete
+
+
+
+
     }
 }

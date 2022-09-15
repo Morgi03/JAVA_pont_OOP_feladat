@@ -36,8 +36,8 @@ public class Pont {
         return Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2));
     }
 
-    public double ketPontTavolsaga(Pont p1, Pont p2) {
-        return p1.x * p2.x + p1.y * p2.y;
+    public double ketPontTavolsaga(Pont p) {
+        return this.x * p.x + this.y * p.y;
     }
 
     public int siknegyed(Pont p) {
@@ -52,13 +52,13 @@ public class Pont {
         if (p.x > 0 && p.y > 0) {
             return jobbfelso;
         }
-        if (p.x > 0 && p.y < 0) {
+        else if (p.x > 0 && p.y < 0) {
             return jobbalso;
         }
-        if (p.x < 0 && p.y < 0) {
+        else if (p.x < 0 && p.y < 0) {
             return balalso;
         }
-        if (p.x < 0 && p.y > 0) {
+        else if (p.x < 0 && p.y > 0) {
             return balfelso;
         }
         return 0;
