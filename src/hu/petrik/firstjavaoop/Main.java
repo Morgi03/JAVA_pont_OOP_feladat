@@ -26,13 +26,13 @@ public class Main {
             System.out.println(p);
         }
         //Origótól legtávolabb eső pont
-        int legtávolabbiPontIndex = 0;
+        int legtavolabbiPontIndex = 0;
         for (int i = 0; i < pontok.length; i++) {
-            if (pontok[legtávolabbiPontIndex].getOrigotolMertTavolsag() < pontok[i].getOrigotolMertTavolsag()) {
-                legtávolabbiPontIndex = i;
+            if (pontok[legtavolabbiPontIndex].getOrigotolMertTavolsag() < pontok[i].getOrigotolMertTavolsag()) {
+                legtavolabbiPontIndex = i;
             }
         }
-        System.out.printf("A legtávolabbi pont az origótól a(z) %d. pont, koordinátái: %s, origótól mért távolsága: %.3f\n", (legtávolabbiPontIndex + 1), pontok[legtávolabbiPontIndex], pontok[legtávolabbiPontIndex].getOrigotolMertTavolsag());
+        System.out.printf("A legtávolabbi pont az origótól a(z) %d. pont, koordinátái: %s, origótól mért távolsága: %.3f\n", (legtavolabbiPontIndex + 1), pontok[legtavolabbiPontIndex], pontok[legtavolabbiPontIndex].getOrigotolMertTavolsag());
 
 
         //saját megoldást igénylő feladatok
