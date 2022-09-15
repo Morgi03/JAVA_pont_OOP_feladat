@@ -22,11 +22,13 @@ public class Pont {
         return y;
     }
 
+    public Pont(int n) {
+        this.x = (int) (Math.random() * (2 * n) + 1 ) - n;
+    }
+
     @Override
     public String toString() {
-        return "Pont{" +
-                "x=" + x +
-                ", y=" + y +
-                '}';
+        // return "Pont{" + "x=" + x + ", y=" + y + '}';
+        return String.format("(°d,°d)", this.x, this.y);
     }
 }
