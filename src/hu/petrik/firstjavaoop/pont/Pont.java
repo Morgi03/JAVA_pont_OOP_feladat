@@ -37,31 +37,55 @@ public class Pont {
     }
 
     public double ketPontTavolsaga(Pont p) {
-        return this.x * p.x + this.y * p.y;
+        return Math.sqrt(Math.pow(this.x - p.x, 2) + Math.pow(this.y - p.y, 2));
     }
 
-    public int siknegyed(Pont p) {
-        return p.siknegyedBehatarolas(p);
+    private int getSiknegyedValue() {
+        int siknegyed = 0;
+        if (this.x > 0 && this.y > 0) {
+            siknegyed = 4;
+        } else if (this.x > 0 && this.y < 0) {
+            siknegyed = 3;
+        } else if (this.x < 0 && this.y < 0) {
+            siknegyed = 2;
+        } else if (this.x < 0 && this.y > 0) {
+            siknegyed = 1;
+        } else if (this.x == 0 && this.y != 0) {
+            siknegyed = 5;
+        } else if (this.x != 0 && this.y == 0) {
+            siknegyed = 6;
+        }
+        return siknegyed;
     }
 
-    private int siknegyedBehatarolas(Pont p) {
-        int balfelso = 1;
-        int balalso = 2;
-        int jobbalso = 3;
-        int jobbfelso = 4;
-        if (p.x > 0 && p.y > 0) {
-            return jobbfelso;
+    public String getSiknegyedSzoveges()
+    {
+        int siknegyed = this.getSiknegyedValue();
+        String siknegyedSzoveges = "";
+        switch (siknegyed){
+            case 0:
+                siknegyedSzoveges = "origo";
+                break;
+            case 1:
+                siknegyedSzoveges = "bal felső síknegyed";
+                break;
+            case 2:
+                siknegyedSzoveges = "bal alsó síknegyed";
+                break;
+            case 3:
+                siknegyedSzoveges = "jobb alsó síknegyed";
+                break;
+            case 4:
+                siknegyedSzoveges = "jobb felső síknegyed";
+                break;
+            case 5:
+                siknegyedSzoveges = "függőleges tengely";
+                break;
+            case 6:
+                siknegyedSzoveges = "vizszintes tengely";
+                break;
         }
-        else if (p.x > 0 && p.y < 0) {
-            return jobbalso;
-        }
-        else if (p.x < 0 && p.y < 0) {
-            return balalso;
-        }
-        else if (p.x < 0 && p.y > 0) {
-            return balfelso;
-        }
-        return 0;
+        return siknegyedSzoveges;
     }
 
     @Override
